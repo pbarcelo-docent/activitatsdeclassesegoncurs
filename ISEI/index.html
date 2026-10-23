@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISEI · El codi de la igualtat</title>
+<style>
+:root{--bg:#f5efe3;--paper:#fffaf1;--ink:#30271f;--muted:#756657;--ochre:#b77924;--gold:#e4b45c;--rust:#8d492c;--olive:#606644;--line:#dfcfb7;--ok:#466348;--bad:#9b3e32;--shadow:0 12px 34px #4a32151c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+button,input,textarea{font:inherit}button{cursor:pointer}.hero{background:linear-gradient(125deg,#392d22,#75502c 58%,#a96f2b);color:#fff8e9;padding:38px 22px 30px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #ffffff26;border-radius:50%;right:-70px;top:-150px;box-shadow:0 0 0 30px #ffffff0c,0 0 0 65px #ffffff08}.hero-inner{max-width:1080px;margin:auto;position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:.76rem;font-weight:800;color:#f2cf8c}.hero h1{font-family:Georgia,serif;font-size:clamp(2.2rem,6vw,4.6rem);line-height:1.02;max-width:780px;margin:14px 0}.hero p{max-width:700px;color:#f3e6d1;font-size:1.08rem}.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill{border:1px solid #ffffff4d;border-radius:999px;padding:6px 12px;font-size:.82rem;background:#ffffff0d}.shell{max-width:1080px;margin:0 auto;padding:22px 18px 64px}.status{display:grid;grid-template-columns:1.2fr 2fr;gap:14px;margin-top:-4px;margin-bottom:20px}.panel,.mission,.brief{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.panel{padding:16px 18px}.status-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.status-head strong{font-size:.96rem}.small{font-size:.88rem;color:var(--muted)}.progress{height:9px;background:#eadcc5;border-radius:99px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ochre),var(--gold));transition:width .35s}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.nav button{border:1px solid var(--line);background:#fff8ed;color:var(--ink);border-radius:999px;padding:9px 14px;font-weight:750}.nav button.active{background:var(--ink);color:#fff6e8;border-color:var(--ink)}.brief{padding:22px;margin-bottom:18px;background:#f0e2c9;box-shadow:none}.brief h2{font:700 1.5rem Georgia,serif;margin:0 0 8px}.brief p{margin:8px 0}.mission{padding:24px;margin-bottom:18px;display:none}.mission.active{display:block;animation:appear .3s ease}@keyframes appear{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}.mission-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}.num{flex:0 0 48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#ead4ac;color:#68441d;font-weight:900;font-size:1.1rem}.mission h2{font:700 clamp(1.5rem,3vw,2.15rem) Georgia,serif;margin:0}.mission-top p{color:var(--muted);margin:4px 0 0}.tag{display:inline-block;border-radius:6px;background:#eee2cf;color:#69491f;padding:3px 8px;font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}.scenario{padding:17px 18px;border-left:4px solid var(--ochre);background:#fcf3e3;border-radius:0 12px 12px 0;margin:16px 0}.question{border-top:1px solid var(--line);padding:18px 0}.question:first-child{border-top:0}.question h3{font-size:1.03rem;margin:0 0 12px}.options{display:grid;gap:8px}.option{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:#fffdf8;cursor:pointer;transition:.15s}.option:hover{border-color:var(--ochre);background:#fff6e5}.option input{margin-top:5px;accent-color:var(--ochre)}.option:has(input:checked){border-color:var(--ochre);background:#f6e6c9}.feedback{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:.92rem}.feedback.show{display:block}.feedback.good{background:#e5eee2;color:#2d5134}.feedback.bad{background:#f5e4df;color:#80372d}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:10px;padding:11px 17px;font-weight:800;background:var(--ochre);color:white;box-shadow:0 4px 0 #82531a}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn.secondary{background:#e9ddc9;color:var(--ink);box-shadow:0 4px 0 #c8b394}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.locked{opacity:.45;pointer-events:none}.mission-status{font-size:.82rem;font-weight:800;color:var(--muted)}.taskbox{background:#f7f0e4;border:1px dashed #c6a46e;border-radius:12px;padding:16px;margin:16px 0}.taskbox label{display:block;font-weight:750;margin-bottom:7px}.taskbox textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:10px;padding:11px;background:#fffdf8;color:var(--ink);resize:vertical}.taskbox input[type=text]{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;background:#fffdf8}.rubric{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.rubric div{background:#f8f0e3;border-radius:12px;padding:12px}.rubric strong{display:block;color:#79501f;font-size:.9rem}.rubric span{font-size:.85rem;color:var(--muted)}.finale{display:none;padding:26px;background:#e7e0c9;border:1px solid #c9b990;border-radius:18px;margin-top:20px}.finale.show{display:block}.finale h2{font:700 2rem Georgia,serif;margin-top:0}.foot{font-size:.82rem;color:var(--muted);text-align:center;margin-top:26px}.toast{position:sticky;bottom:12px;display:none;background:#30271f;color:#fff5e5;padding:12px 16px;border-radius:12px;margin-top:12px;box-shadow:var(--shadow);z-index:5}.toast.show{display:block}.source-note{font-size:.86rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:20px}
+@media(max-width:700px){.status{grid-template-columns:1fr}.mission{padding:18px}.rubric{grid-template-columns:1fr}.hero{padding-top:30px}.mission-top{gap:10px}.num{flex-basis:42px;height:42px}}
+@media print{.nav,.actions,.btn,.toast{display:none!important}.mission{display:block!important;break-inside:avoid}.hero{background:#fff;color:#222;border-bottom:2px solid #8d632b}.hero p{color:#333}.pill{border-color:#777}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="hero-inner">
+  <div class="eyebrow">CFGS · Promoció de la Igualtat de Gènere · ISEI</div>
+  <h1>El codi de la igualtat</h1>
+  <p><strong>Escape room psicopedagògic:</strong> obriu el laboratori d'intervenció socioeducativa. Haureu d'investigar, interpretar evidències i prendre decisions professionals per desbloquejar les cinc claus de la intervenció.</p>
+  <div class="hero-meta"><span class="pill">Nivell superior</span><span class="pill">5 missions</span><span class="pill">Treball cooperatiu</span><span class="pill">Constructivisme · Neuroeducació · Coeducació</span></div>
+ </div>
+</header>
+<main class="shell">
+ <section class="status">
+  <div class="panel"><div class="status-head"><strong>Identificació de l'equip</strong><span class="small">Abans de començar</span></div><input id="teamName" type="text" placeholder="Nom de l'equip o participants" aria-label="Nom de l'equip" style="margin-top:10px;width:100%;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fffdf8"><p class="small">La informació es manté en aquesta pàgina; no s'envia a cap servidor.</p></div>
+  <div class="panel"><div class="status-head"><strong>Progrés del repte</strong><span id="progressText">0 de 5 missions</span></div><div class="progress"><span id="progressBar"></span></div><p class="small" id="scoreText">Puntuació: 0 / 100 · Les missions es desbloquegen en ordre.</p></div>
+ </section>
+ <div class="brief"><span class="tag">Missió principal</span><h2>El centre comunitari ha activat l'alarma</h2><p>Un centre juvenil vol posar en marxa un programa de prevenció de les violències masclistes. El primer disseny és massa transmissiu, no té en compte els aprenentatges previs ni les emocions i reprodueix estereotips sense qüestionar-los. Com a futures tècniques d'igualtat, heu de redissenyar la intervenció amb fonaments psicopedagògics sòlids.</p><p><strong>Regla d'or:</strong> no n'hi ha prou amb identificar la teoria. Cal justificar per què una estratègia és adequada, detectar-ne els límits i transferir-la a una situació professional.</p></div>
+ <nav class="nav" aria-label="Missions">
+  <button class="active" data-go="0">01 · Esquemes</button><button data-go="1">02 · Aprendre amb altres</button><button data-go="2">03 · Cervell i emoció</button><button data-go="3">04 · Diàleg i coeducació</button><button data-go="4">05 · Disseny professional</button>
+ </nav>
+ <section class="mission active" data-mission="0">
+  <div class="mission-top"><div class="num">01</div><div><span class="tag">Analitzar · Aplicar</span><h2>La cambra dels esquemes</h2><p>Conflicte cognitiu i aprenentatge significatiu</p></div></div>
+  <div class="scenario"><strong>Expedient:</strong> a un taller, una participant afirma: «Els gelos són una prova d'amor». La dinamitzadora respon amb una presentació de 40 diapositives i demana memoritzar-ne les definicions. En acabar, el grup repeteix els conceptes, però no sap analitzar situacions reals.</div>
+  <div class="question" data-q="0"><h3>1. Quina intervenció s'ajusta millor al constructivisme i a l'aprenentatge significatiu?</h3><div class="options">
+   <label class="option"><input type="radio" name="q0" value="a">A. Repetir la definició correcta fins que la participant abandoni la seva idea inicial.</label>
+   <label class="option"><input type="radio" name="q0" value="b">B. Explorar d'on prové aquesta creença, contrastar-la amb casos i evidències, i construir una interpretació nova connectada amb els coneixements previs.</label>
+   <label class="option"><input type="radio" name="q0" value="c">C. Evitar el debat perquè les idees prèvies interfereixen en l'aprenentatge objectiu.</label>
+   <label class="option"><input type="radio" name="q0" value="d">D. Demanar una definició de gelosia i avaluar només la precisió del vocabulari.</label>
+  </div><div class="feedback" id="f0"></div></div>
+  <div class="question" data-q="1"><h3>2. Quin element mostra un conflicte cognitiu ben orientat?</h3><div class="options">
+   <label class="option"><input type="radio" name="q1" value="a">A. Ridiculitzar la creença perquè el grup senti vergonya de mantenir-la.</label>
+   <label class="option"><input type="radio" name="q1" value="b">B. Presentar informació sorprenent sense temps per analitzar-la.</label>
+   <label class="option"><input type="radio" name="q1" value="c">C. Confrontar la idea inicial amb situacions que en mostrin les contradiccions, en un espai segur que permeti revisar els esquemes.</label>
+   <label class="option"><input type="radio" name="q1" value="d">D. Substituir la reflexió per una norma que cal obeir.</label>
+  </div><div class="feedback" id="f1"></div></div>
+  <div class="taskbox"><label for="note0">Microrepte d'equip · Escriu una pregunta que connecti els coneixements previs amb una nova comprensió.</label><textarea id="note0" placeholder="Ex.: Quina diferència hi ha entre cuidar algú i controlar..."></textarea></div>
+  <div class="actions"><button class="btn" onclick="checkMission(0)">Validar missió</button><button class="btn secondary" onclick="showHint(0)">Pista conceptual</button></div><p class="small" id="hint0" hidden>Ausubel: el nou aprenentatge es vincula amb els anteriors. Piaget: els esquemes poden revisar-se davant d'un conflicte cognitiu. No confongueu memorització amb comprensió transferible.</p>
+ </section>
+ <section class="mission" data-mission="1">
+  <div class="mission-top"><div class="num">02</div><div><span class="tag">Aplicar · Avaluar</span><h2>La xarxa d'aprenentatge</h2><p>Vigotsky, zona de desenvolupament potencial i Bandura</p></div></div>
+  <div class="scenario"><strong>Expedient:</strong> en un grup de joves, algunes persones identifiquen fàcilment micromasclismes, mentre d'altres els consideren «bromes normals». Les xarxes socials que consumeixen mostren sovint relacions de control com si fossin romàntiques.</div>
+  <div class="question" data-q="2"><h3>3. Quina proposta reflecteix millor la zona de desenvolupament potencial de Vigotsky?</h3><div class="options">
+   <label class="option"><input type="radio" name="q2" value="a">A. Donar exactament la mateixa tasca individual a tothom i prohibir que es comuniquin.</label>
+   <label class="option"><input type="radio" name="q2" value="b">B. Assignar a les persones expertes tota la feina perquè el producte final sigui millor.</label>
+   <label class="option"><input type="radio" name="q2" value="c">C. Organitzar anàlisis cooperatives amb preguntes guia, modelatge i suport entre iguals, retirant l'ajuda progressivament.</label>
+   <label class="option"><input type="radio" name="q2" value="d">D. Rebaixar el repte fins que ningú necessiti ajuda.</label>
+  </div><div class="feedback" id="f2"></div></div>
+  <div class="question" data-q="3"><h3>4. Des de Bandura, quin és l'anàlisi professional més complet?</h3><div class="options">
+   <label class="option"><input type="radio" name="q3" value="a">A. Les conductes s'aprenen només mitjançant instruccions explícites de persones adultes.</label>
+   <label class="option"><input type="radio" name="q3" value="b">B. Els missatges i models observats en l'entorn familiar, entre iguals i als mitjans poden modelar conductes; cal analitzar-los i oferir referents igualitaris.</label>
+   <label class="option"><input type="radio" name="q3" value="c">C. Si una conducta apareix en una sèrie, totes les persones espectadores la reproduiran necessàriament.</label>
+   <label class="option"><input type="radio" name="q3" value="d">D. Els referents no són rellevants quan l'alumnat ja coneix la definició de violència.</label>
+  </div><div class="feedback" id="f3"></div></div>
+  <div class="taskbox"><label for="note1">Microrepte d'equip · Proposa un model de conducta igualitària que es pugui observar i practicar.</label><textarea id="note1" placeholder="Descriu la conducta, el context i com es farà visible..."></textarea></div>
+  <div class="actions"><button class="btn" onclick="checkMission(1)">Validar missió</button><button class="btn secondary" onclick="showHint(1)">Pista conceptual</button></div><p class="small" id="hint1" hidden>Vigotsky destaca la interacció social i la distància entre allò que una persona pot fer sola i amb ajuda. Bandura posa l'accent en l'observació, la imitació i el modelatge, sense assumir una imitació automàtica.</p>
+ </section>
+ <section class="mission" data-mission="2">
+  <div class="mission-top"><div class="num">03</div><div><span class="tag">Analitzar · Avaluar</span><h2>El laboratori de l'atenció</h2><p>Neuroeducació, emocions i condicions per aprendre</p></div></div>
+  <div class="scenario"><strong>Expedient:</strong> una formadora inicia una sessió sobre violència masclista demanant a cada persona que relati una experiència personal dolorosa davant del grup. No hi ha alternativa per no participar, el clima és tens i després s'espera que tothom recordi les definicions.</div>
+  <div class="question" data-q="4"><h3>5. Quina decisió didàctica és més responsable i coherent amb els principis del document?</h3><div class="options">
+   <label class="option"><input type="radio" name="q4" value="a">A. Augmentar la pressió emocional perquè la informació s'imprimeixi millor en la memòria.</label>
+   <label class="option"><input type="radio" name="q4" value="b">B. Mantenir l'activitat perquè compartir experiències és imprescindible per a tothom.</label>
+   <label class="option"><input type="radio" name="q4" value="c">C. Crear un entorn segur, oferir opcions de participació, activar la curiositat amb un cas fictici i combinar anàlisi, cooperació i reflexió.</label>
+   <label class="option"><input type="radio" name="q4" value="d">D. Eliminar tota emoció i treballar només amb definicions abstractes.</label>
+  </div><div class="feedback" id="f4"></div></div>
+  <div class="question" data-q="5"><h3>6. Quina afirmació evita una simplificació excessiva sobre la neuroeducació?</h3><div class="options">
+   <label class="option"><input type="radio" name="q5" value="a">A. La curiositat, l'emoció i l'atenció poden afavorir l'aprenentatge, però cap estímul garanteix per si sol la consolidació de la memòria.</label>
+   <label class="option"><input type="radio" name="q5" value="b">B. Només aprenem allò que ens emociona intensament.</label>
+   <label class="option"><input type="radio" name="q5" value="c">C. Una activitat multisensorial sempre és més eficaç, independentment del contingut.</label>
+   <label class="option"><input type="radio" name="q5" value="d">D. L'estrès és sempre necessari per activar l'aprenentatge.</label>
+  </div><div class="feedback" id="f5"></div></div>
+  <div class="taskbox"><label for="note2">Microrepte d'equip · Escriu dues mesures concretes per garantir seguretat emocional sense evitar el tema.</label><textarea id="note2" placeholder="P. ex., casos ficticis, dret a passar, normes de diàleg..."></textarea></div>
+  <div class="actions"><button class="btn" onclick="checkMission(2)">Validar missió</button><button class="btn secondary" onclick="showHint(2)">Pista conceptual</button></div><p class="small" id="hint2" hidden>El document destaca curiositat, experiències significatives, clima emocional positiu, cooperació i error com a part del procés. No s'ha de confondre aquesta idea amb la promesa que una emoció o tècnica concreta garanteixi l'aprenentatge.</p>
+ </section>
+ <section class="mission" data-mission="3">
+  <div class="mission-top"><div class="num">04</div><div><span class="tag">Avaluar · Crear</span><h2>La sala de les veus</h2><p>Enfocament dialògic, educació emocional i coeducació</p></div></div>
+  <div class="scenario"><strong>Expedient:</strong> un centre juvenil vol fer una campanya sobre relacions igualitàries. El cartell proposat diu «Els nois són forts; les noies són sensibles» i assigna a les noies la cura del grup. L'equip tècnic planteja substituir el cartell per una xerrada magistral.</div>
+  <div class="question" data-q="6"><h3>7. Quina alternativa integra millor diàleg i coeducació?</h3><div class="options">
+   <label class="option"><input type="radio" name="q6" value="a">A. Canviar els colors del cartell, mantenint el missatge, i fer una xerrada final.</label>
+   <label class="option"><input type="radio" name="q6" value="b">B. Fer que les noies liderin la campanya perquè tenen més capacitat natural per a la cura.</label>
+   <label class="option"><input type="radio" name="q6" value="c">C. Facilitar un diàleg amb preguntes crítiques, revisar llenguatge i rols, distribuir tasques equitativament i visibilitzar referents diversos.</label>
+   <label class="option"><input type="radio" name="q6" value="d">D. Evitar parlar de gènere per no generar desacords.</label>
+  </div><div class="feedback" id="f6"></div></div>
+  <div class="question" data-q="7"><h3>8. Davant d'un desacord intens en el debat, quina actuació és més adequada des de l'educació emocional?</h3><div class="options">
+   <label class="option"><input type="radio" name="q7" value="a">A. Identificar emocions, establir torns, escoltar l'impacte de les paraules i reconduir el conflicte sense humiliació ni relativitzar la discriminació.</label>
+   <label class="option"><input type="radio" name="q7" value="b">B. Demanar a la persona afectada que expliqui detalladament el seu trauma per convèncer el grup.</label>
+   <label class="option"><input type="radio" name="q7" value="c">C. Aturar qualsevol expressió emocional i continuar amb el temari.</label>
+   <label class="option"><input type="radio" name="q7" value="d">D. Tractar totes les opinions com a igualment vàlides, encara que legitimin la violència.</label>
+  </div><div class="feedback" id="f7"></div></div>
+  <div class="taskbox"><label for="note3">Microrepte d'equip · Formula un indicador observable per avaluar si la campanya és coeducativa.</label><textarea id="note3" placeholder="Ex.: distribució de rols, llenguatge, presència de referents..."></textarea></div>
+  <div class="actions"><button class="btn" onclick="checkMission(3)">Validar missió</button><button class="btn secondary" onclick="showHint(3)">Pista conceptual</button></div><p class="small" id="hint3" hidden>La coeducació revisa estereotips, materials, espais, temps, llenguatge i distribució de rols. L'educació emocional incorpora consciència, autoregulació, empatia i resolució no violenta dels conflictes.</p>
+ </section>
+ <section class="mission" data-mission="4">
+  <div class="mission-top"><div class="num">05</div><div><span class="tag">Crear · Justificar · Transferir</span><h2>El repte final: dissenyar per transformar</h2><p>Integreu les teories en una intervenció professional coherent</p></div></div>
+  <div class="scenario"><strong>Encàrrec professional:</strong> teniu 90 minuts per dissenyar una microintervenció per a un grup de joves de 14–16 anys que consumeix continguts digitals on es normalitzen els gelos, el control i els estereotips de gènere. No n'hi ha prou amb fer una xerrada informativa: cal una proposta activa, inclusiva i avaluable.</div>
+  <div class="rubric"><div><strong>Coherència teòrica · 30 punts</strong><span>Relaciona almenys 3 fonaments amb decisions concretes.</span></div><div><strong>Perspectiva de gènere · 30 punts</strong><span>Qüestiona estereotips i promou relacions igualitàries.</span></div><div><strong>Aplicació i avaluació · 40 punts</strong><span>Inclou seqüència, participació, evidències i indicadors observables.</span></div></div>
+  <div class="taskbox"><label for="design">Producte final · Disseny de la microintervenció</label><textarea id="design" style="min-height:180px" placeholder="1. Necessitat detectada i coneixements previs...&#10;2. Activitat inicial que desperti curiositat sense generar inseguretat...&#10;3. Seqüència participativa (accions de les persones participants)...&#10;4. Fonaments psicopedagògics i justificació...&#10;5. Mesures d'inclusió i seguretat emocional...&#10;6. Evidència final i dos indicadors d'avaluació..."></textarea></div>
+  <div class="question"><h3>9. Autoavaluació professional: quina decisió faria que la proposta fos més que una activitat atractiva?</h3><div class="options">
+   <label class="option"><input type="radio" name="q8" value="a">A. Afegir una puntuació competitiva, encara que no es recullin evidències d'aprenentatge.</label>
+   <label class="option"><input type="radio" name="q8" value="b">B. Justificar les estratègies amb fonaments, recollir evidències de canvi en les interpretacions i revisar la proposta segons els resultats.</label>
+   <label class="option"><input type="radio" name="q8" value="c">C. Fer servir el màxim nombre de recursos digitals possibles.</label>
+   <label class="option"><input type="radio" name="q8" value="d">D. Valorar només si el grup s'ha divertit.</label>
+  </div><div class="feedback" id="f8"></div></div>
+  <div class="actions"><button class="btn" onclick="checkMission(4)">Validar missió final</button><button class="btn secondary" onclick="showHint(4)">Veure criteris</button></div><p class="small" id="hint4" hidden>Una intervenció professional ha de connectar necessitats, fonaments, activitats i evidències. La motivació és útil, però no substitueix l'aprenentatge ni l'avaluació.</p>
+ </section>
+ <section class="finale" id="finale"><span class="tag">Repte completat</span><h2>Heu obert el codi de la igualtat</h2><p id="finalSummary"></p><p><strong>Transferència professional:</strong> abans d'implementar la proposta, contrasteu-la amb el context real, els recursos disponibles i les necessitats del grup. La intervenció ha de ser inclusiva, segura i revisable a partir de les evidències.</p><div class="actions"><button class="btn" onclick="downloadReport()">Descarregar informe de l'equip (.txt)</button><button class="btn secondary" onclick="window.print()">Imprimir / desar en PDF</button><button class="btn secondary" onclick="resetGame()">Reiniciar repte</button></div></section>
+ <div class="toast" id="toast" role="status" aria-live="polite"></div>
+ <p class="source-note"><strong>Base de continguts:</strong> document de classe «Fonaments psicopedagògics de la intervenció socioeducativa per a la igualtat» (ISEI, apartats 3.1–3.5): constructivisme, Vigotsky, Ausubel, Bandura, Bruner, neuroeducació, enfocament participatiu i dialògic, educació emocional i coeducació. Les preguntes i els casos són elaboracions didàctiques per transferir aquests conceptes a decisions professionals.</p>
+ <p class="foot">Dissenyat per a ús formatiu · No recopila ni envia res a internet · Les respostes es processen localment al navegador.</p>
+</main>
+<script>
+const key={q0:'b',q1:'c',q2:'c',q3:'b',q4:'c',q5:'a',q6:'c',q7:'a',q8:'b'};
+const explanations={
+ q0:'Correcte. L’aprenentatge significatiu connecta el nou coneixement amb els esquemes previs i permet revisar-los amb anàlisi i evidències.',
+ q1:'Correcte. El conflicte cognitiu ha d’obrir una revisió reflexiva dels esquemes, no humiliar ni imposar una resposta sense comprensió.',
+ q2:'Correcte. La interacció i l’ajuda ajustada permeten avançar més enllà del que es podria fer de manera autònoma; el suport es pot retirar gradualment.',
+ q3:'Correcte. Bandura ajuda a analitzar l’aprenentatge per observació i la importància dels models, sense suposar que l’efecte sigui automàtic.',
+ q4:'Correcte. Una intervenció segura ofereix opcions, evita l’exposició personal obligatòria i manté l’anàlisi crítica del problema.',
+ q5:'Correcte. La curiositat i l’emoció poden facilitar l’atenció i la memòria, però no són garanties automàtiques d’aprenentatge.',
+ q6:'Correcte. La coeducació requereix revisar missatges, rols i pràctiques, i el diàleg pot ajudar a construir una mirada crítica compartida.',
+ q7:'Correcte. L’educació emocional promou consciència, autoregulació, empatia i resolució no violenta, sense legitimar la discriminació.',
+ q8:'Correcte. La qualitat professional es veu en la coherència entre necessitat, fonaments, activitat i evidències per revisar la intervenció.'
+};
+const wrong={
+ q0:'Reviseu la diferència entre memoritzar i construir significat a partir dels coneixements previs.',
+ q1:'Una revisió d’esquemes no s’ha de basar en humiliació, imposició o estímuls sense reflexió.',
+ q2:'La ZDP no significa fer la tasca per l’altra persona ni eliminar tot repte: implica ajuda ajustada i interacció.',
+ q3:'Bandura destaca els models observats, però no planteja que tothom imiti necessàriament qualsevol conducta.',
+ q4:'La seguretat emocional no exigeix evitar el tema; exigeix no forçar revelacions personals i oferir formes segures de participar.',
+ q5:'Eviteu afirmacions absolutes: les emocions i els estímuls no garanteixen per si sols la consolidació de la memòria.',
+ q6:'Canviar l’estètica sense revisar els estereotips no transforma el missatge ni la distribució dels rols.',
+ q7:'No s’ha de forçar cap revelació personal ni equiparar una opinió discriminatòria amb una anàlisi respectuosa.',
+ q8:'Una activitat atractiva o tecnològica no demostra per si sola aprenentatge: calen evidències i revisió.'
+};
+let completed=[false,false,false,false,false], points=[0,0,0,0,0], answersChecked={};
+const missionQs=[[0,1],[2,3],[4,5],[6,7],[8]];
+function selected(name){let el=document.querySelector('input[name="'+name+'"]:checked');return el?el.value:null}
+function checkMission(i){
+ const qs=missionQs[i]; let missing=qs.filter(n=>!selected('q'+n));
+ if(missing.length){toast('Contesteu totes les preguntes de la missió abans de validar-la.');return}
+ let correct=0;
+ qs.forEach(n=>{
+  const name='q'+n, val=selected(name), box=document.getElementById('f'+n);
+  const ok=val===key[name]; if(ok)correct++;
+  box.className='feedback show '+(ok?'good':'bad');
+  box.textContent=(ok?explanations[name]:wrong[name]);
+  document.querySelectorAll('input[name="'+name+'"]').forEach(inp=>inp.disabled=true);
+  answersChecked[name]=val;
+ });
+ let earned=Math.round((correct/qs.length)*(i===4?20:20));
+ if(i===4){earned=correct===1?20:0}
+ if(!completed[i]){points[i]=earned;completed[i]=true}
+ updateUI();
+ if(i<4){document.querySelector('[data-go="'+(i+1)+'"]').disabled=false;toast(correct===qs.length?'Missió superada. La següent s’ha desbloquejat.':'Missió validada. Reviseu les explicacions i continueu cap a la següent missió.')}
+ else{
+  const final=document.getElementById('finale');final.classList.add('show');
+  const total=points.reduce((a,b)=>a+b,0);
+  document.getElementById('finalSummary').textContent=(document.getElementById('teamName').value.trim()||'L’equip')+' ha completat les cinc missions amb '+total+' / 100 punts en preguntes autocorregibles. El producte final escrit queda disponible per descarregar-lo a l’informe.';
+  final.scrollIntoView({behavior:'smooth',block:'start'});
+ }
+}
+function updateUI(){
+ let n=completed.filter(Boolean).length,total=points.reduce((a,b)=>a+b,0);
+ document.getElementById('progressText').textContent=n+' de 5 missions';
+ document.getElementById('progressBar').style.width=(n*20)+'%';
+ document.getElementById('scoreText').textContent='Puntuació: '+total+' / 100 · '+(n===5?'Repte completat':'Les missions es desbloquegen en ordre.');
+ document.querySelectorAll('.nav button').forEach((b,i)=>{b.classList.toggle('done',completed[i]);b.style.borderColor=completed[i]?'#8c9a6e':'';});
+}
+function go(i){if(i>0&&!completed[i-1]){toast('Completeu primer la missió anterior per desbloquejar aquesta sala.');return}
+ document.querySelectorAll('.mission').forEach((m,j)=>m.classList.toggle('active',i===j));
+ document.querySelectorAll('.nav button').forEach((b,j)=>b.classList.toggle('active',i===j));
+ window.scrollTo({top:document.querySelector('.nav').offsetTop-12,behavior:'smooth'});
+}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.go))));
+function showHint(i){const el=document.getElementById('hint'+i);el.hidden=!el.hidden}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3600)}
+function downloadReport(){
+ const name=document.getElementById('teamName').value.trim()||'Equip sense nom';
+ let out='EL CODI DE LA IGUALTAT · INFORME D’EQUIP\nISEI · CFGS Promoció de la Igualtat de Gènere\nEquip: '+name+'\nPuntuació: '+points.reduce((a,b)=>a+b,0)+'/100\n\n';
+ for(let i=0;i<5;i++)out+='MISSIÓ '+(i+1)+' · '+(completed[i]?'Completada':'No completada')+' · '+points[i]+'/20\n';
+ out+='\nRESPOSTES I REFLEXIONS\n';
+ for(let i=0;i<9;i++)out+='Pregunta '+(i+1)+': '+(answersChecked['q'+i]||'Sense resposta')+' · '+(answersChecked['q'+i]===key['q'+i]?'Correcta':'Revisar')+'\n';
+ ['note0','note1','note2','note3','design'].forEach((id,i)=>{const labels=['Microrepte missió 1','Microrepte missió 2','Microrepte missió 3','Microrepte missió 4','Disseny final'];out+='\n'+labels[i]+':\n'+(document.getElementById(id).value||'No completat')+'\n'});
+ const blob=new Blob([out],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='informe_equip_isei.txt';a.click();URL.revokeObjectURL(url);
+}
+function resetGame(){if(!confirm('Voleu reiniciar el repte? Es perdran les respostes d’aquesta sessió.'))return;
+ completed=[false,false,false,false,false];points=[0,0,0,0,0];answersChecked={};
+ document.querySelectorAll('input[type=radio]').forEach(x=>{x.checked=false;x.disabled=false});
+ document.querySelectorAll('.feedback').forEach(x=>{x.className='feedback';x.textContent=''});
+ ['note0','note1','note2','note3','design','teamName'].forEach(id=>document.getElementById(id).value='');
+ document.querySelectorAll('.nav button').forEach((b,i)=>{b.disabled=i>0});
+ document.getElementById('finale').classList.remove('show');updateUI();go(0);
+}
+document.querySelectorAll('.nav button').forEach((b,i)=>{b.disabled=i>0});
+</script>
+</body>
+</html>
